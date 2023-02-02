@@ -2,11 +2,24 @@ package ie.setu.classes
 
 import Person
 
-fun main(args: Array<String>) {
+private val persons = ArrayList<Person>()
 
+fun main(args: Array<String>) {
+    persons.add(Person("Mark", "Roche"))
+    persons.add(Person("Wisdom", "M"))
+    persons.add(Person("Josh", "M"))
+
+    for(person in persons)
+        println(person)
+}
+
+fun personInfo(){
     val person1 = Person("Mark", "Roche")
     val person2 = person1.copy(firstName = "Clare")
     val person3 = person1.copy()
+
+    println(person1)
+    println(person2.toString())
 
     println("person1 hashcode = ${person1.hashCode()}")
     println("person2 hashcode = ${person2.hashCode()}")
@@ -21,6 +34,4 @@ fun main(args: Array<String>) {
         println("person1 is equal to person3.")
     else
         println("person1 is not equal to person3.")
-
-
 }
